@@ -9,6 +9,5 @@ import {AuthService} from './services/auth.service';
 export class AppComponent {
   title = 'driverslog';
 
-  constructor(public auth: AuthService) {
-  }
+  constructor(public auth: AuthService) { }
 }

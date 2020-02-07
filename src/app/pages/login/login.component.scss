@@ -1,0 +1,23 @@
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #eaeaea;
+  .login-form {
+    width: 30%;
+    padding: 2rem;
+    flex-direction: column;
+
+    mat-form-field {
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+      background-color: green;
+      color: #fff;
+    }
+  }
+}
