@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "dw-driver-log": {
+      "hosting": {
+        "driverslog": [
+          "dw-driver-log"
+        ]
+      }
+    }
+  }
+}

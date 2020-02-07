@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "driverslog",
+      "public": "dist/driverslog",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
