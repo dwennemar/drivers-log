@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../services/auth.service';
+import {AuthService} from '../../services/auth/auth.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -21,14 +21,12 @@ export class LoginComponent implements OnInit {
   }
 
   async loginWithGoogle() {
-    if (await this.auth.googleSignin()) {
-      this.router.navigate(['']);
-    }
+    await this.auth.googleSignin();
+    this.router.navigate(['']);
   }
 
   async loginWithEmail(email: string, passwd: string) {
-    if (await this.auth.emailSignin(email, passwd)) {
-      this.router.navigate(['']);
-    }
+    await this.auth.emailSignin(email, passwd);
+    this.router.navigate(['']);
   }
 }

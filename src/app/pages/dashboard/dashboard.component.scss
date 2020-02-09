@@ -1,5 +1,12 @@
 .content {
+  background-color: #eaeaea;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   padding: 2rem;
+
+  .form-wrapper mat-card {
+    display: flex;
+    flex-direction: column;
+  }
 }

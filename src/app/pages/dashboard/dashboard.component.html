@@ -1,4 +1,17 @@
 <div class="content">
+  <span *ngIf="auth.user$ | async as user">
+    Hello {{user.name}}!
+  </span>
+  <div class="form-wrapper">
+    <mat-card>
+      <mat-form-field appearance="outline">
+        <mat-label>Kilometerstand</mat-label>
+        <input matInput type="number" #milageInput>
+      </mat-form-field>
+      <button (click)="onMileageSubmit(milageInput.value)" mat-raised-button>Submit</button>
+    </mat-card>
+  </div>
+
   <p>Mileage Log</p>
   <button mat-raised-button (click)="auth.signOut()">Sign Out</button>
 </div>
