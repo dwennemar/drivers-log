@@ -1,3 +1,20 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: cadetblue;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  mat-toolbar-row {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      background-color: lightblue;
+      color: #fff;
+    }
+  }
+}
 .content {
   background-color: #eaeaea;
   display: flex;
@@ -5,8 +22,19 @@
   flex-direction: column;
   padding: 2rem;
 
-  .form-wrapper mat-card {
+  .form-wrapper{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+
+
+    mat-card {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-width: 200px;
+      max-width: 500px;
+    }
   }
+
+
 }
