@@ -3,11 +3,8 @@ import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firest
 import {Mileage} from '../../entities/mileage';
 import {User} from '../../entities/user';
 import {AuthService} from '../auth/auth.service';
-import {Observable} from 'rxjs';
-import QuerySnapshot = firebase.firestore.QuerySnapshot;
-import * as firebase from 'firebase';
-import DocumentData = firebase.firestore.DocumentData;
-import Timestamp = firebase.firestore.Timestamp;
+
+import * as firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +22,7 @@ export class MilDataService {
 
   addMilage(mil: number) {
     const data: Mileage = {
-      date: Timestamp.now(),
+      date: firebase.firestore.Timestamp.now(),
       km: mil,
       user: this.user
     };

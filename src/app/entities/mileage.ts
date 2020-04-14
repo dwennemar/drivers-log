@@ -1,10 +1,10 @@
 import {User} from './user';
-import Timestamp = firebase.firestore.Timestamp;
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/firestore';
 
 export interface Mileage {
 
-  date: Timestamp;
+  date: firebase.firestore.Timestamp;
   km: number;
   user: User;
 }
