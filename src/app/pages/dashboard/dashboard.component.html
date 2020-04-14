@@ -16,7 +16,7 @@
           <mat-label>Kilometerstand</mat-label>
           <input matInput type="number" #milageInput>
         </mat-form-field>
-        <button (click)="onMileageSubmit(milageInput.value)" mat-raised-button>Submit</button>
+        <button (click)="onMileageSubmit(milageInput.value); milageInput.value=''" mat-raised-button>Submit</button>
       </mat-card>
     </div>
     <div class="mileage">
