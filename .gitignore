@@ -112,10 +112,11 @@ local.properties
 .idea
 **/node_modules/*
 **/.firebaserc
-.firestore.rules
-.firestore.indexes.json
-.storage.rules
-
+*.firestore.rules
+*.firestore.indexes.json
+*.storage.rules
+*.rules
+firestore.indexes.json
 ### Firebase Patch ###
 .runtimeconfig.json
 .firebase/
