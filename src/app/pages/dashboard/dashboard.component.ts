@@ -22,9 +22,11 @@ export class DashboardComponent implements OnInit {
   onMileageSubmit(mileage: string) {
     const mil = Number(mileage);
     this.milService.addMilage(mil);
+    this.collect();
   }
 
   async collect() {
+    this.data = Array<Mileage>(0);
     await this.milService.getAllData().then(res => {
       res.get().forEach(snapshot => snapshot.forEach(doc => {
         this.data.push(doc.data() as Mileage);
