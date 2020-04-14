@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import {Mileage} from '../../entities/mileage';
 import {User} from '../../entities/user';
@@ -17,7 +17,7 @@ export class MilDataService {
     private store: AngularFirestore,
     private auth: AuthService
   ) {
-    this.auth.user$.subscribe(res => this.user = res );
+    this.auth.user$.subscribe(res => this.user = res);
   }
 
   addMilage(mil: number) {
@@ -31,7 +31,6 @@ export class MilDataService {
   }
 
   async getAllData(): Promise<AngularFirestoreCollection<Mileage>> {
-    return  this.store.collection<Mileage>(`mileage`);
+    return this.store.collection<Mileage>('mileage', ref => ref.orderBy('km', 'desc'));
   }
-
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth/auth.service';
 import {MilDataService} from '../../services/mil-data/mil-data.service';
 import {Mileage} from '../../entities/mileage';
@@ -13,7 +13,8 @@ export class DashboardComponent implements OnInit {
 
   data: Mileage[] = Array<Mileage>(0);
 
-  constructor(public auth: AuthService, private milService: MilDataService) { }
+  constructor(public auth: AuthService, private milService: MilDataService) {
+  }
 
   ngOnInit() {
     this.collect();
@@ -32,7 +33,21 @@ export class DashboardComponent implements OnInit {
         this.data.push(doc.data() as Mileage);
       }));
     });
+    this.sort();
   }
+
+  sort() {
+    this.data.sort((a, b) => {
+      if (a.date < b.date) {
+        return -1;
+      } else if (a.date > b.date) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+  }
+
   formatDate(date: Date): string {
     return new DatePipe('de-DE').transform(date);
   }
