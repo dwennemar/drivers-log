@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import {LOCALE_ID, NgModule} from '@angular/core';
+import localeDE from '@angular/common/locales/de';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {AngularFireAuthModule} from '@angular/fire/auth';
@@ -16,6 +16,10 @@ import { MatInputModule } from '@angular/material/input';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDividerModule} from '@angular/material/divider';
+import {registerLocaleData} from '@angular/common';
+
+registerLocaleData(localeDE);
 
 @NgModule({
   declarations: [
@@ -36,6 +40,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatCardModule,
     MatIconModule,
     MatToolbarModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
