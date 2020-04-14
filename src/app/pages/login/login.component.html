@@ -8,7 +8,7 @@
       <mat-label>Password</mat-label>
       <input matInput type="password" #passwd>
     </mat-form-field>
-    <button mat-raised-button (click)="loginWithEmail(email.value, passwd.value)" (keypress)="loginWithEmail(email.value, passwd.value)">Login</button>
+    <button mat-raised-button (click)="loginWithEmail(email.value, passwd.value)" (keyup.enter)="loginWithEmail(email.value, passwd.value)">Login</button>
     <p></p>
     <button mat-button (click)="loginWithGoogle()">SignIn with Google</button>
   </mat-card>
