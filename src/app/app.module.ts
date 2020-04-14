@@ -18,6 +18,7 @@ import { LoginComponent } from './pages/login/login.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
 import {registerLocaleData} from '@angular/common';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 registerLocaleData(localeDE);
 
@@ -41,6 +42,7 @@ registerLocaleData(localeDE);
     MatIconModule,
     MatToolbarModule,
     MatDividerModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
