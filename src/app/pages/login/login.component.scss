@@ -21,3 +21,13 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    .login-form {
+      width: 100%;
+    }
+  }
+}

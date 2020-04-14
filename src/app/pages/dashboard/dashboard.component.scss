@@ -1,40 +1,61 @@
-mat-toolbar {
+.container {
   display: flex;
-  justify-content: space-between;
-  background-color: cadetblue;
-  color: #fff;
-  text-align: center;
-  position: relative;
-  mat-toolbar-row {
+  flex-direction: column;
+  height: 100%;
+  mat-toolbar {
     display: flex;
     justify-content: space-between;
+    background-color: cadetblue;
+    color: #fff;
+    text-align: center;
+    position: relative;
 
-    button {
-      background-color: lightblue;
-      color: #fff;
-    }
-  }
-}
-.content {
-  background-color: #eaeaea;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 2rem;
-
-  .form-wrapper{
-    display: flex;
-    justify-content: center;
-
-
-    mat-card {
+    mat-toolbar-row {
       display: flex;
-      flex-direction: column;
-      width: 100%;
-      min-width: 200px;
-      max-width: 500px;
+      justify-content: space-between;
+
+      button {
+        background-color: lightblue;
+        color: #fff;
+      }
     }
   }
 
+  .content {
+    background-color: #eaeaea;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    //height: auto;
+    flex: 1;
+    overflow: auto;
+    .form-wrapper {
+      display: flex;
+      justify-content: center;
 
+      mat-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-width: 200px;
+        max-width: 500px;
+      }
+      button {
+        background-color: #eee;
+      }
+    }
+
+    .mileage {
+      margin-top: 1rem;
+      flex: 1;
+      overflow: auto;
+
+      h1 {
+        font-size: large;
+      }
+      mat-divider {
+        margin-bottom: 1ex;
+      }
+    }
+  }
 }

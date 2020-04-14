@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth/auth.service';
 import {MilDataService} from '../../services/mil-data/mil-data.service';
 import {Mileage} from '../../entities/mileage';
-import {newArray} from '@angular/compiler/src/util';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +11,7 @@ import {newArray} from '@angular/compiler/src/util';
 })
 export class DashboardComponent implements OnInit {
 
-  data: Mileage[] = newArray<Mileage>(0);
+  data: Mileage[] = Array<Mileage>(0);
 
   constructor(public auth: AuthService, private milService: MilDataService) { }
 
@@ -31,5 +31,7 @@ export class DashboardComponent implements OnInit {
       }));
     });
   }
-
+  formatDate(date: Date): string {
+    return new DatePipe('de-DE').transform(date);
+  }
 }

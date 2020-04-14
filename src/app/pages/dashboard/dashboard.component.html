@@ -1,25 +1,30 @@
-<mat-toolbar>
-  <mat-toolbar-row class="greeting">
-    <span *ngIf="auth.user$ | async as user" >
+<div class="container">
+  <mat-toolbar>
+    <mat-toolbar-row class="greeting">
+    <span *ngIf="auth.user$ | async as user">
       Hello {{user.name}}!
     </span>
-    <button mat-raised-button (click)="auth.signOut()"><mat-icon>exit_to_app</mat-icon></button>
-  </mat-toolbar-row>
-</mat-toolbar>
-<div class="content">
-
-  <div class="form-wrapper">
-    <mat-card>
-      <mat-form-field appearance="outline">
-        <mat-label>Kilometerstand</mat-label>
-        <input matInput type="number" #milageInput>
-      </mat-form-field>
-      <button (click)="onMileageSubmit(milageInput.value)" mat-raised-button>Submit</button>
-    </mat-card>
+      <button mat-raised-button (click)="auth.signOut()">
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="content">
+    <div class="form-wrapper">
+      <mat-card>
+        <mat-form-field appearance="outline">
+          <mat-label>Kilometerstand</mat-label>
+          <input matInput type="number" #milageInput>
+        </mat-form-field>
+        <button (click)="onMileageSubmit(milageInput.value)" mat-raised-button>Submit</button>
+      </mat-card>
+    </div>
+    <div class="mileage">
+      <h1>Mileage Log</h1>
+      <mat-divider></mat-divider>
+      <ul *ngFor="let res of data">
+        <li><strong>{{formatDate(res.date.toDate())}}:</strong> {{res.user.name}} ({{res.km}})</li>
+      </ul>
+    </div>
   </div>
-
-  <p>Mileage Log</p>
-  <span *ngFor="let res of data">
-    {{res.date.toDate().toDateString()}}: {{res.user.name}}({{res.km}})
-  </span>
 </div>
