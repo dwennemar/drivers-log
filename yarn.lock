@@ -207,10 +207,12 @@
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-9.1.1.tgz#0a4bb3f81e4103d141556dd5c7272f05bc78cfaa"
   integrity sha512-6lDlUlePafr/392hOvvTZZl6xPHT50U6658sHUAVIr0Un4mJ2MHNHKZtO45bpn3hM4gjFcYRQ7Rpd0umW74iTA==
 
-"@angular/fire@^5.4.2":
-  version "5.4.2"
-  resolved "https://registry.yarnpkg.com/@angular/fire/-/fire-5.4.2.tgz#fb2d54935de0d83789e940e5f57a6ffc0e1ef4eb"
-  integrity sha512-QzB5d1wtqr9jxfsVNv2+569MlfK4/QrrpNy0IngOHdxS4FBbXqMOcx37iv1m2mzJv9zlGUddUX44IZP5Xfb3cw==
+"@angular/fire@~6.0.2":
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@angular/fire/-/fire-6.0.2.tgz#6c391128496f4fa16afba436a7a57a25e3e510f1"
+  integrity sha512-r59v7XD2oNN1oJghRMcph+PVqJj49aQnQevArOU4ldW07K0t9k2Ud8ALO/z3iNvMOBkumenGlYSS/h3v4foLBg==
+  dependencies:
+    tslib "^1.10.0"
 
 "@angular/forms@~9.1.1":
   version "9.1.1"
