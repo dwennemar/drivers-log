@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { auth } from 'firebase/app';
+import { auth } from 'firebase';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import {Observable, of} from 'rxjs';
+import {Observable, of, } from 'rxjs';
 import {map, switchMap, take, tap} from 'rxjs/operators';
 import {User} from '../../entities/user';
 
@@ -31,18 +31,18 @@ export class AuthService {
 
   async googleSignin(): Promise<void> {
     const provider = new auth.GoogleAuthProvider();
-    const credential = await this.fireAuth.auth.signInWithPopup(provider);
+    const credential = await this.fireAuth.signInWithPopup(provider);
 
     return this.updateUserData(credential.user);
   }
 
   async emailSignin(email: string, passwd: string): Promise<void> {
-    const credential = await this.fireAuth.auth.signInWithEmailAndPassword(email, passwd);
+    const credential = await this.fireAuth.signInWithEmailAndPassword(email, passwd);
     return this.updateUserData(credential.user);
   }
 
   async signOut() {
-    await this.fireAuth.auth.signOut();
+    await this.fireAuth.signOut();
     return this.router.navigate(['/login']);
   }
 
